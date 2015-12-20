@@ -40,6 +40,8 @@ class UserModel extends Model
 
     // 自动填充
     protected $_auto = array(
+        // 密码md5加密
+        array('password', 'md5', self::MODEL_BOTH, 'function'),
         // 注册时间
         array('register_time', 'time', self::MODEL_INSERT, 'function'),
         // 注册IP

@@ -16,7 +16,13 @@ return array(
     'URL_MODEL'=>2,
     'URL_ROUTE_RULES'=>array(
         // API模块路由
-        'api/user/register$'=>'Api/User/register',
+        'api/user/register$'=>'Api/User/register',    // 用户注册
+        'api/user/login'=>'Api/user/login',    // 用户登录
+        'api/user/logout$'=>'Api/User/logout',    // 用户退出登录
+        'api/user/list$'=>'Api/User/listUser',
+        'api/daily/create$'=>'Api/Daily/create',
+        'api/daily/list$'=>'Api/Daily/listDaily',
+        'api/daily/delete$'=>'Api/Daily/deleteDaily',
     ),
 
 );

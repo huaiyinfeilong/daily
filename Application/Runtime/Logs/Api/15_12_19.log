@@ -1283,3 +1283,482 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
 SQL: SELECT * FROM `daily_user` WHERE `username` = '张三' LIMIT 1   [ RunTime:0.0020s ]
 
+[ 2015-12-19T12:14:35+08:00 ] 192.168.199.10 /daily/api/user/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小白兔' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T12:15:13+08:00 ] 192.168.199.10 /daily/api/user/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小白兔' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `email` = 'rabbit@qq.com' LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT * FROM `daily_user` WHERE `mobile` = '13323232323' LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT * FROM `daily_user` WHERE `qq` = '13322223333' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T12:15:25+08:00 ] 192.168.199.10 /daily/api/user/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小白兔' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_user` WHERE `email` = 'rabbit@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `mobile` = '13323232323' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `qq` = '13322223333' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `weixin` = 'rabiit1222222' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `daily_user` (`username`,`password`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`register_ip`) VALUES ('小白兔','rabbit123456','rabbit@qq.com','13323232323','13322223333','rabiit1222222','1450498525','192.168.199.10') [ RunTime:0.2590s ]
+
+[ 2015-12-19T18:50:14+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-19T18:54:25+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刘彪' AND `email` = '刘彪' AND `mobile` = '刘彪' AND `qq` = '刘彪' AND `weixin` = '刘彪' LIMIT 1   [ RunTime:0.0460s ]
+
+[ 2015-12-19T18:54:34+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小红帽' AND `email` = '小红帽' AND `mobile` = '小红帽' AND `qq` = '小红帽' AND `weixin` = '小红帽' LIMIT 1   [ RunTime:0.0330s ]
+
+[ 2015-12-19T18:54:52+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小白兔' AND `email` = '小白兔' AND `mobile` = '小白兔' AND `qq` = '小白兔' AND `weixin` = '小白兔' LIMIT 1   [ RunTime:0.0080s ]
+
+[ 2015-12-19T18:55:01+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小白兔' AND `email` = '小白兔' AND `mobile` = '小白兔' AND `qq` = '小白兔' AND `weixin` = '小白兔' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T18:55:08+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-19T18:55:17+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小白兔' AND `email` = '小白兔' AND `mobile` = '小白兔' AND `qq` = '小白兔' AND `weixin` = '小白兔' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T19:01:42+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小白兔' OR `email` = '小白兔' OR `mobile` = '小白兔' OR `qq` = '小白兔' OR `weixin` = '小白兔' LIMIT 1   [ RunTime:0.0340s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\daily\Application\Api\Controller\UserController.class.php 第 52 行.
+
+[ 2015-12-19T19:01:48+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '小白兔' OR `email` = '小白兔' OR `mobile` = '小白兔' OR `qq` = '小白兔' OR `weixin` = '小白兔' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\daily\Application\Api\Controller\UserController.class.php 第 52 行.
+
+[ 2015-12-19T19:02:40+08:00 ] ::1 /daily/api/user/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_user` WHERE `email` = 'wutian@qq.com' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_user` WHERE `mobile` = '18000880088' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `qq` = '18000880088' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T19:02:48+08:00 ] ::1 /daily/api/user/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `email` = 'wutian@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `mobile` = '18000880088' LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT * FROM `daily_user` WHERE `qq` = '18000880088' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `weixin` = 'wt18000880088' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `daily_user` (`username`,`password`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`register_ip`) VALUES ('吴天','6ab0b32c4d181d7ab8b5f6b0f9c5799b','wutian@qq.com','18000880088','18000880088','wt18000880088','1450522968','0.0.0.0') [ RunTime:0.0810s ]
+
+[ 2015-12-19T19:03:08+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' OR `email` = '吴天' OR `mobile` = '吴天' OR `qq` = '吴天' OR `weixin` = '吴天' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\daily\Application\Api\Controller\UserController.class.php 第 52 行.
+
+[ 2015-12-19T19:03:19+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' OR `email` = '吴天' OR `mobile` = '吴天' OR `qq` = '吴天' OR `weixin` = '吴天' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\daily\Application\Api\Controller\UserController.class.php 第 52 行.
+
+[ 2015-12-19T19:03:27+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' OR `email` = '吴天' OR `mobile` = '吴天' OR `qq` = '吴天' OR `weixin` = '吴天' LIMIT 1   [ RunTime:0.0230s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\daily\Application\Api\Controller\UserController.class.php 第 52 行.
+
+[ 2015-12-19T19:03:36+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' OR `email` = '吴天' OR `mobile` = '吴天' OR `qq` = '吴天' OR `weixin` = '吴天' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\daily\Application\Api\Controller\UserController.class.php 第 52 行.
+
+[ 2015-12-19T19:03:47+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' OR `email` = '吴天' OR `mobile` = '吴天' OR `qq` = '吴天' OR `weixin` = '吴天' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\daily\Application\Api\Controller\UserController.class.php 第 52 行.
+
+[ 2015-12-19T19:03:56+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' OR `email` = '吴天' OR `mobile` = '吴天' OR `qq` = '吴天' OR `weixin` = '吴天' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 D:\WWW\daily\Application\Api\Controller\UserController.class.php 第 52 行.
+
+[ 2015-12-19T19:04:19+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '吴天' OR `email` = '吴天' OR `mobile` = '吴天' OR `qq` = '吴天' OR `weixin` = '吴天' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T19:19:04+08:00 ] ::1 /daily/api/user/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `email` = 'daolang@qq.com' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_user` WHERE `mobile` = '13380000008' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_user` WHERE `qq` = '13380000008' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `weixin` = 'dl180000088888' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `daily_user` (`username`,`password`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`register_ip`) VALUES ('刀郎','f37e744ad78e14ac03a406a82edbd57c','daolang@qq.com','13380000008','13380000008','dl180000088888','1450523944','0.0.0.0') [ RunTime:0.0550s ]
+
+[ 2015-12-19T19:41:53+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-19T19:43:37+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-12-19T20:02:45+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-12-19T20:06:01+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T20:10:25+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T20:19:04+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T20:22:22+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T20:22:26+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T21:29:50+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T21:35:13+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T21:54:08+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T22:00:15+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T22:04:20+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T22:05:29+08:00 ] ::1 /daily/api/user/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T22:09:03+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T22:10:27+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T22:13:23+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T22:19:56+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-19T22:22:04+08:00 ] 192.168.199.10 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T22:24:44+08:00 ] 192.168.199.10 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T22:36:25+08:00 ] 192.168.199.10 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T22:37:35+08:00 ] 192.168.199.10 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T22:40:15+08:00 ] 192.168.199.10 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-19T22:43:57+08:00 ] 192.168.199.10 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '刀郎' OR `email` = '刀郎' OR `mobile` = '刀郎' OR `qq` = '刀郎' OR `weixin` = '刀郎' LIMIT 1   [ RunTime:0.0010s ]
+

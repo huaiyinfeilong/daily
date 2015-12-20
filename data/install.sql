@@ -18,3 +18,17 @@ CREATE TABLE `daily_user` (
     UNIQUE `weixin` (`weixin`),
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `daily_daily`;
+CREATE TABLE `daily_daily` (
+    `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `uid` int(11) unsigned NOT NULL DEFAULT 0 COMMENT '用户ID',
+    `title` varchar(50) NOT NULL DEFAULT '' COMMENT '日报标题',
+    `content` varchar(5000) NOT NULL DEFAULT '' COMMENT '日报正文',
+    `create_time` int(11) unsigned NOT NULL DEFAULT 0 COMMENT '创建时间',
+    `update_time` int(11) unsigned NOT NULL DEFAULT 0 COMMENT '更新时间',
+    `create_ip` varchar(15) NOT NULL DEFAULT '' COMMENT '创建时的IP地址',
+    `update_ip` varchar(15) NOT NULL DEFAULT '' COMMENT '更新时的IP地址',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

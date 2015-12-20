@@ -8,8 +8,37 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $user = M('User');
-        $this->userList = $user->select();
+        // 自动登录
+        $this->autoLogin();
+        // 传递session中的user到前端
+        $this->user = session('user');
+
         $this->display();
+    }
+
+    protected function autoLogin()
+    {
+        $cookie = cookie('user');
+        if (empty($cookie))
+            return false;
+
+        $uid = $cookie['uid'];
+        if ($uid <= 0)
+            return false;
+
+        $db = M('User');
+        $rs = $db->find($uid);
+        if (!$rs)
+            return false;
+        if ($cookie['key'] != md5(get_client_ip()))
+            return false;
+
+        if ($cookie['password'] != md5(md5(get_client_ip()) . $rs['password']))
+            return false;
+
+        $userSession = array('uid'=>$uid, 'username'=>$rs['username'], 'client_ip'=>get_client_ip());
+        session('user', $userSession);
+
+        return true;
     }
 }
