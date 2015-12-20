@@ -79,10 +79,11 @@
         </div>
         <!-- 日报列表结束 -->
         <!-- 日报内容开始 -->
-        <div class="daily-detail-view" style="display:none;">
+        <div tabindex="0" class="daily-detail-view" style="display:none;">
             <div class="daily-detail-title"></div>
             <div><span class="daily-detail-author"></span><span class="daily-detail-update-time"></span></div>
             <div class="daily-detail-content"></div>
+            <div class="daily-detail-close"><button id="btn_daily_detail_close" type="button">关闭</button></div>
         </div>
         <!-- 日报内容结束 -->
     </div>
@@ -161,6 +162,50 @@ $("#write_daily_form_view").hide();
 clearWriteDailyForm();
 }
 
+// 显示日报内容详情视图
+function showDailyDetailView()
+{
+    $(".daily-detail-view").show();
+        $(".daily-detail-view").focus();
+}
+
+// 清空日报内容视图中的数据
+function clearDailyDetailView()
+{
+    $(".daily-detail-title").html('');
+    $(".daily-detail-author").html('');
+    $(".daily-detail-update-time").html('');
+    $(".daily-detail-content").html('');
+}
+
+// 关闭日报详情视图
+function closeDailyDetailView()
+{
+    clearDailyDetailView();
+    $(".daily-detail-view").hide();
+}
+
+// 点击日报标题链接
+function detailDaily(id)
+{
+    $.post('{:U('/api/daily/detail')}', {id: id}, function(data){
+        switch (data)
+        {
+        case '-1':
+            alert('日报没有找到！');
+        break;
+        default:
+            var dailyDetail = JSON.parse(data);
+            $(".daily-detail-title").html(dailyDetail.title);
+            $(".daily-detail-author").html(dailyDetail.author);
+            $(".daily-detail-update-time").html(dailyDetail.update_time);
+            $(".daily-detail-content").html(dailyDetail.content);
+            showDailyDetailView();
+        break;
+        }
+    });
+}
+
 // 更新日报列表
 function updateDailyTable()
 {
@@ -170,7 +215,7 @@ function updateDailyTable()
         {
             var dailyList = JSON.parse(data);
         for (var i = 0; i < dailyList.length; i++)
-                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" data="' + dailyList[i].id.toString() + '" href="javascript:;">' + dailyList[i].title + '</a></td><td>' + dailyList[i].author + '</td><td>' + dailyList[i].update_time + '</td><td><a class="daily-item-edit" onclick="editDaily(' + dailyList[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" onclick="deleteDaily(' + dailyList[i].id + ')" href="javascript:;">删除</a></td></tr>');
+                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" onclick="detailDaily(' + dailyList[i].id + ')" href="javascript:;">' + dailyList[i].title + '</a></td><td>' + dailyList[i].author + '</td><td>' + dailyList[i].update_time + '</td><td><a class="daily-item-edit" onclick="editDaily(' + dailyList[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" onclick="deleteDaily(' + dailyList[i].id + ')" href="javascript:;">删除</a></td></tr>');
         }
     });
 }
@@ -429,6 +474,10 @@ $(function(){
         });
     });
 
+    // 点击日报详情内容视图中的关闭按钮
+    $("#btn_daily_detail_close").click(function(){
+            closeDailyDetailView();
+        });
 
 });
 </script>

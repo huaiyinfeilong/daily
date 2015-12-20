@@ -23,6 +23,7 @@ return array(
         'api/daily/create$'=>'Api/Daily/create',
         'api/daily/list$'=>'Api/Daily/listDaily',
         'api/daily/delete$'=>'Api/Daily/deleteDaily',
+        'api/daily/detail$'=>'Api/Daily/detailDaily',    // 日报内容详情
     ),
 
 );

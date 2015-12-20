@@ -3989,3 +3989,577 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
+[ 2015-12-20T22:49:54+08:00 ] ::1 /daily/api/daily/detail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2015-12-20T22:50:01+08:00 ] ::1 /daily/api/daily/detail?id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T22:50:04+08:00 ] ::1 /daily/api/daily/detail?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T22:50:08+08:00 ] ::1 /daily/api/daily/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T22:50:11+08:00 ] ::1 /daily/api/daily/detail?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T22:50:15+08:00 ] ::1 /daily/api/daily/detail?id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T22:50:18+08:00 ] ::1 /daily/api/daily/detail?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T22:50:23+08:00 ] ::1 /daily/api/daily/detail?id=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T22:50:27+08:00 ] ::1 /daily/api/daily/detail?id=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T22:50:30+08:00 ] ::1 /daily/api/daily/detail?id=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 12 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T22:50:38+08:00 ] ::1 /daily/api/user/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`username`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`last_time`,`register_ip`,`last_ip` FROM `daily_user`  [ RunTime:0.0000s ]
+
+[ 2015-12-20T22:50:39+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-20T22:50:48+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `username` = '黑猫警长' OR `email` = '黑猫警长' OR `mobile` = '黑猫警长' OR `qq` = '黑猫警长' OR `weixin` = '黑猫警长' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T22:50:57+08:00 ] ::1 /daily/api/daily/create.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\WWW\daily\Application\Api\Controller\DailyController.class.php on line 19 and defined D:\WWW\daily\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\WWW\daily\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\WWW\daily\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\WWW\daily\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SELECT * FROM `daily_daily` WHERE `title` = '20151120日报-黑猫警长' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `daily_daily` (`title`,`content`,`uid`,`create_time`,`update_time`,`create_ip`,`update_ip`) VALUES ('20151120日报-黑猫警长','【工作列表】
+','1','1450623057','1450623057','0.0.0.0','0.0.0.0') [ RunTime:0.0540s ]
+
+[ 2015-12-20T22:50:59+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0010s ]
+SQL: SELECT `username` FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T22:51:29+08:00 ] ::1 /daily/api/daily/detail?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T22:52:33+08:00 ] ::1 /daily/api/daily/detail?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:10:19+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0010s ]
+SQL: SELECT `username` FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:10:20+08:00 ] ::1 /daily/api/user/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`username`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`last_time`,`register_ip`,`last_ip` FROM `daily_user`  [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:10:23+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:10:29+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:10:30+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:10:31+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:10:32+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:10:33+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:10:34+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:10:35+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:10:39+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:12:30+08:00 ] ::1 /daily/api/user/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`username`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`last_time`,`register_ip`,`last_ip` FROM `daily_user`  [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:12:31+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `username` FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:12:36+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:12:44+08:00 ] ::1 /daily/api/user/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`username`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`last_time`,`register_ip`,`last_ip` FROM `daily_user`  [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:12:45+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `username` FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:12:49+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:12:50+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:14:45+08:00 ] ::1 /daily/api/user/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`username`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`last_time`,`register_ip`,`last_ip` FROM `daily_user`  [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:14:46+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0000s ]
+SQL: SELECT `username` FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:14:48+08:00 ] ::1 /daily/api/user/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-12-20T23:15:03+08:00 ] ::1 /daily/api/user/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`username`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`last_time`,`register_ip`,`last_ip` FROM `daily_user`  [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:15:04+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `username` FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:19:58+08:00 ] ::1 /daily/api/user/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`username`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`last_time`,`register_ip`,`last_ip` FROM `daily_user`  [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:19:59+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `username` FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:20:01+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:21:11+08:00 ] ::1 /daily/api/daily/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0030s ]
+SQL: SELECT `username` FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:21:12+08:00 ] ::1 /daily/api/user/list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`username`,`email`,`mobile`,`qq`,`weixin`,`register_time`,`last_time`,`register_ip`,`last_ip` FROM `daily_user`  [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:21:14+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:21:23+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:21:45+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2015-12-20T23:27:08+08:00 ] ::1 /daily/api/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-12-20T23:31:11+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2015-12-20T23:59:31+08:00 ] ::1 /daily/api/daily/detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `daily_daily` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_daily` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `daily_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `daily_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+

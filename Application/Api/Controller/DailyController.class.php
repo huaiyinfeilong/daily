@@ -83,4 +83,20 @@ class DailyController extends Controller
         $daily->delete($id);
         die('1');
     }
+
+    // 日报详细内容
+    public function detailDaily($id = null)
+    {
+        $daily = M('Daily');
+        $rs = $daily->find($id);
+        if (!$rs)
+            die('-1');    // 日报没有找到
+
+        $data['title'] = $rs['title'];
+        $user = M('User')->find($rs['uid']);
+        $data['author'] = $user['username'];
+        $data['update_time'] = date('Y-m-d H:i:s', $rs['update_time']);
+        $data['content'] = $rs['content'];
+        die(json_encode($data));
+    }
 }
