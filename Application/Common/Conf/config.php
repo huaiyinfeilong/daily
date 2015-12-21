@@ -20,6 +20,7 @@ return array(
         'api/user/login'=>'Api/user/login',    // 用户登录
         'api/user/logout$'=>'Api/User/logout',    // 用户退出登录
         'api/user/list$'=>'Api/User/listUser',
+        'api/user/profile$'=>'Api/User/profile',
         'api/daily/create$'=>'Api/Daily/create',
         'api/daily/list$'=>'Api/Daily/listDaily',
         'api/daily/delete$'=>'Api/Daily/deleteDaily',

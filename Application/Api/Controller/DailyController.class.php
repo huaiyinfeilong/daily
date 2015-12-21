@@ -13,7 +13,7 @@ class DailyController extends Controller
 
         // 用户登录态检查
         if (!$this->isLogined())
-            die('-11');
+            $this->ajaxReturn(-11);
 
         $db = D('Daily');
         $data = I();
@@ -22,12 +22,12 @@ class DailyController extends Controller
         if ($db->create($data))
         {
             if ($db->add())
-                die('1');
-            die('0');
+                $this->ajaxReturn(1);
+            $this->ajaxReturn(0);
         }
         else
         {
-            die((string)($db->getError()));
+            $this->ajaxReturn($db->getError());
         }
     }
 
@@ -60,7 +60,7 @@ class DailyController extends Controller
             $item['update_time'] = date('Y-m-d H:i:s', $item['update_time']);
             array_push($data, $item);
         }
-        die(json_encode($data));
+        $this->ajaxReturn($data);
     }
 
     public function deleteDaily($id = null)
@@ -70,18 +70,18 @@ class DailyController extends Controller
 
         $userSession = session('user');
         if (!$userSession)
-            die('-1');    // 没有登录
+            $this->ajaxReturn(-1);    // 没有登录
 
         $daily = M('Daily');
         $rs = $daily->find($id);
         if (!$rs)
-            die('-2');    // 没有找到日报
+            $this->ajaxReturn(-2);    // 没有找到日报
 
         if ($rs['uid'] != $userSession['uid'])
-            die('-3');    // 用户只能删除自己编写的日报
+            $this->ajaxReturn(-3);    // 用户只能删除自己编写的日报
 
         $daily->delete($id);
-        die('1');
+        $this->ajaxReturn(1);
     }
 
     // 日报详细内容
@@ -90,13 +90,13 @@ class DailyController extends Controller
         $daily = M('Daily');
         $rs = $daily->find($id);
         if (!$rs)
-            die('-1');    // 日报没有找到
+            $this->ajaxReturn(-1);    // 日报没有找到
 
         $data['title'] = $rs['title'];
         $user = M('User')->find($rs['uid']);
         $data['author'] = $user['username'];
         $data['update_time'] = date('Y-m-d H:i:s', $rs['update_time']);
         $data['content'] = $rs['content'];
-        die(json_encode($data));
+        $this->ajaxReturn($data);
     }
 }

@@ -20,13 +20,13 @@ class UserController extends Controller
             {
         $userSession = array('uid'=>$rs['id'], 'username'=>$rs['username'], 'client_ip'=>get_client_ip());
                 session('user', $userSession);
-                die('1');
+                $this->ajaxReturn(1);
             }
-            die('0');
+            $this->ajaxReturn(0);
         }
         else
         {
-            die((string)($user->getError()));
+            $this->ajaxReturn($user->getError());
         }
     }
 
@@ -37,30 +37,30 @@ class UserController extends Controller
 
         // 用户名不能为空
         if (empty($username))
-            die('-1');
+            $this->ajaxReturn(-1);
 
         // 密码不能为空
         if (empty($password))
-            die('-2');
+            $this->ajaxReturn(-2);
 
         $db = M('User');
         $rs = $db->where(array('username'=>$username, 'email'=>$username, 'mobile'=>$username, 'qq'=>$username, 'weixin'=>$username, '_logic'=>'OR'))->find();
         // 用户不存在
         if (!$rs)
-            die('-3');
+            $this->ajaxReturn(-3);
 
         // 密码不正确
         if ($rs['password'] != md5($password))
-            die('-4');
+            $this->ajaxReturn(-4);
 
         // 保存用户信息到session
         session('user', array('uid'=>$rs['id'], 'username'=>$rs['username'], 'client_ip'=>get_client_ip()));
         // 写入信息到cookie
         if ($type == 1)
-            cookie('user', array('uid'=>$rs['id'], 'password'=>md5(md5(get_client_ip()) . $rs['password']), 'key'=>md5(get_client_ip())), 3600);
+            cookie('user', array('uid'=>$rs['id'], 'username'=>$rs['username'], 'password'=>md5(md5(get_client_ip()) . $rs['password']), 'key'=>md5(get_client_ip())), 3600);
 
         // 验证通过
-        die('1');
+        $this->ajaxReturn(1);
 
         // 记录最后登录时间
         $rs['last_time'] = time();
@@ -85,8 +85,21 @@ class UserController extends Controller
         // 获取除password以外的所有字段
         $rs = $db->field('password', true)->select();
         if (!$rs)
-            die();
+            $this->ajaxReturn(-1);
 
-        die(json_encode($rs));
+        $this->ajaxReturn($rs);
+    }
+
+    public function profile()
+    {
+        if (!IS_POST)
+            return false;
+
+        $userSession = session('user');
+        if (!$userSession)
+            $this->ajaxReturn(-1);    // 用户没有登录
+
+        $user = M('User')->field('password', true)->find($userSession['uid']);
+        $this->ajaxReturn($user);
     }
 }

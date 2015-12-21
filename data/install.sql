@@ -17,7 +17,7 @@ CREATE TABLE `daily_user` (
     UNIQUE KEY `qq` (`qq`),
     UNIQUE `weixin` (`weixin`),
     PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `daily_daily`;
 CREATE TABLE `daily_daily` (
@@ -30,5 +30,5 @@ CREATE TABLE `daily_daily` (
     `create_ip` varchar(15) NOT NULL DEFAULT '' COMMENT '创建时的IP地址',
     `update_ip` varchar(15) NOT NULL DEFAULT '' COMMENT '更新时的IP地址',
     PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 

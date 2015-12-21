@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <title><?php echo C('WEBSITE_TITLE');?></title>
 <script type="text/javascript" src="/daily/Public/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/daily/Public/js/jquery.cookie.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -122,10 +123,9 @@ function clearWriteDailyForm()
 function updateUserSelector()
 {
     $.post('<?php echo U('/api/user/list');?>', {}, function(data){
-            var userList = JSON.parse(data);
             $("#user_selector").html('');
-            for (var i = 0; i < userList.length; i++)
-                $("#user_selector").append('<option value="' + userList[i].id + '">' + userList[i].username + '</option>');
+            for (var i = 0; i < data.length; i++)
+                $("#user_selector").append('<option value="' + data[i].id + '">' + data[i].username + '</option>');
     });
 }
 
@@ -141,6 +141,28 @@ function closeUserLoginForm()
 {
     clearUserLoginForm();
     $("#user_login_form_view").hide();
+}
+
+// 显示用户头像
+function showUserPhoto()
+{
+        $.post('<?php echo U('/api/user/profile');?>', {}, function(data){
+        $("#link_user_register").hide();
+        $("#link_user_login").hide();
+        $("#link_user_photo").html(data.username);
+        $("#link_user_photo").show();
+        $("#link_user_logout").show();
+    });
+}
+
+// 隐藏用户头像
+function hideUserPhoto()
+{
+    $("#link_user_photo").html('');
+    $("#link_user_photo").hide();
+    $("#link_user_logout").hide();
+    $("#link_user_register").show();
+    $("#link_user_login").show();
 }
 
 // 显示撰写日报表单
@@ -189,15 +211,14 @@ function detailDaily(id)
     $.post('<?php echo U('/api/daily/detail');?>', {id: id}, function(data){
         switch (data)
         {
-        case '-1':
+        case -1:
             alert('日报没有找到！');
         break;
         default:
-            var dailyDetail = JSON.parse(data);
-            $(".daily-detail-title").html(dailyDetail.title);
-            $(".daily-detail-author").html(dailyDetail.author);
-            $(".daily-detail-update-time").html(dailyDetail.update_time);
-            $(".daily-detail-content").html(dailyDetail.content);
+            $(".daily-detail-title").html(data.title);
+            $(".daily-detail-author").html(data.author);
+            $(".daily-detail-update-time").html(data.update_time);
+            $(".daily-detail-content").html(data.content);
             showDailyDetailView();
         break;
         }
@@ -211,9 +232,8 @@ function updateDailyTable()
         $("#daily_table_tbody").html('');
             if (data)
         {
-            var dailyList = JSON.parse(data);
-        for (var i = 0; i < dailyList.length; i++)
-                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" onclick="detailDaily(' + dailyList[i].id + ')" href="javascript:;">' + dailyList[i].title + '</a></td><td>' + dailyList[i].author + '</td><td>' + dailyList[i].update_time + '</td><td><a class="daily-item-edit" onclick="editDaily(' + dailyList[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" onclick="deleteDaily(' + dailyList[i].id + ')" href="javascript:;">删除</a></td></tr>');
+        for (var i = 0; i < data.length; i++)
+                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" onclick="detailDaily(' + data[i].id + ')" href="javascript:;">' + data[i].title + '</a></td><td>' + data[i].author + '</td><td>' + data[i].update_time + '</td><td><a class="daily-item-edit" onclick="editDaily(' + data[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" onclick="deleteDaily(' + data[i].id + ')" href="javascript:;">删除</a></td></tr>');
         }
     });
 }
@@ -229,16 +249,16 @@ function deleteDaily(id)
     $.post('<?php echo U('/api/daily/delete');?>', {id: id}, function(data){
         switch (data)
         {
-        case '-1':
+        case -1:
             alert('您尚未登录，无法进行此操作！');
         break;
-        case '-2':
+        case -2:
             alert('您要删除的日报不存在！');
         break;
-        case '-3':
+        case -3:
             alert('您无权删除他人日报！');
         break;
-        case '1':
+        case 1:
             alert('删除成功！');
             updateDailyTable();
         break;
@@ -263,86 +283,86 @@ $(function(){
         $.post('<?php echo U('/api/user/register');?>', {username: document.getElementById('user_register_form_username').value, password: document.getElementById('user_register_form_password').value, password2: document.getElementById('user_register_form_password2').value, email: document.getElementById('user_register_form_email').value, mobile: document.getElementById('user_register_form_mobile').value, qq: document.getElementById('user_register_form_qq').value, weixin: document.getElementById('user_register_form_weixin').value}, function(data){
             switch (data)
             {
-            case '-1':
+            case -1:
                 alert('姓名不能为空！');
                 $("#user_register_form_username").focus();
             break;
-            case '-2':
+            case -2:
                 alert('姓名只能由2~10个汉字组成！');
                 $("#user_register_form_username").focus();
                 break;
-            case '-3':
+            case -3:
                 alert('用户已经存在！');
                 $("#user_register_form_username").focus();
             break;
-            case '-4':
+            case -4:
                 alert('密码不能为空！');
                 $("#user_register_form_password").focus();
             break;
-            case '-5':
+            case -5:
                 alert('密码长度必须在6~20之间，且只能由于字母、数字和“-”组成！');
                 $("#user_register_form_password").focus();
             break;
-            case '-6':
+            case -6:
                 alert('两次密码输入不一致！');
                 $("#user_register_form_password").focus();
             break;
-            case '-7':
+            case -7:
                 alert('电子邮箱不能为空！');
                 $("#user_register_form_email").focus();
             break;
-            case '-8':
+            case -8:
                 alert('电子邮箱格式不正确！');
                 $("#user_register_form_email").focus();
             break;
-            case '-9':
+            case -9:
                 alert('电子邮箱地址的长度只能在5~30之间！');
                 $("#user_register_form_email").focus();
             break;
-            case '-10':
+            case -10:
                 alert('电子邮箱已被注册！');
                 $("#user_register_form_email").focus();
             break;
-            case '-11':
+            case -11:
                 alert('手机号码不能为空！');
                 $("#user_register_form_mobile").focus();
             break;
-            case '-12':
+            case -12:
                 alert('手机号码不正确！');
                 $("#user_register_form_mobile").focus();
             break;
-            case '-13':
+            case -13:
                 alert('手机号码已被注册！');
                 $("#user_register_form_mobile").focus();
             break;
-            case '-14':
+            case -14:
                 alert('QQ号码不能为空！');
                 $("#user_register_form_qq").focus();
             break;
-            case '-15':
+            case -15:
                 alert('QQ号码格式不正确！');
                 $("#user_register_form_qq").focus();
             break;
-            case '-16':
+            case -16:
                 alert('QQ号码已被注册！');
                 $("#user_register_form_qq").focus();
             break;
-            case '-17':
+            case -17:
                 alert('微信号码不能为空！');
                 $("#user_register_form_weixin").focus();
             break;
-            case '-18':
+            case -18:
                 alert('微信号码格式不正确！');
                 $("#user_register_form_weixin").focus();
             break;
-            case '-19':
+            case -19:
                 alert('微信号码已被注册！');
                 $("#user_register_form_weixin").focus();
             break;
-            case '0':
+            case 0:
                 alert('未知错误，请联系管理员！');
             break;
-            case '1':
+            case 1:
                 alert('注册成功，请登录！');
                 updateUserSelector();
                 $("#user_register_form_view").hide();
@@ -371,30 +391,26 @@ $(function(){
         $.post('<?php echo U('api/user/login');?>', {username: username, password: password, type: (rememberPassword? 1 : 0)}, function(data){
             switch (data)
             {
-            case '-1':
+            case -1:
                 alert('用户名不能为空！');
                 $("#user_login_form_username").focus();
             break;
-            case '-2':
+            case -2:
                 alert('密码不能为空！');
                 $("#user_login_form_password").focus();
             break;
-            case '-3':
+            case -3:
                 alert('用户不存在！');
                 $("#user_login_form_username").focus();
             break;
-            case '-4':
+            case -4:
                 alert('密码不正确！');
                 $("#user_login_form_password").focus();
             break;
-            case '1':
+            case 1:
                 alert('登录成功！');
-                $("#link_user_photo").html($("#user_login_form_username").val());
                 closeUserLoginForm();
-                $("#link_user_register").hide();
-                $("#link_user_login").hide();
-                $("#link_user_photo").show();
-                $("#link_user_logout").show();
+                showUserPhoto();
             break;
             default:
                 alert('未知错误，请联系管理员！');
@@ -412,10 +428,7 @@ $(function(){
     // 点击退出登录链接
     $("#link_user_logout").click(function(){
         $.post('<?php echo U('/api/user/logout');?>', {}, function(data){
-            $("#link_user_photo").hide();
-            $("#link_user_logout").hide();
-            $("#link_user_register").show();
-            $("#link_user_login").show();
+            hideUserPhoto();
         });
     });
 
@@ -444,23 +457,23 @@ $(function(){
         $.post('<?php echo U('/api/daily/create');?>', {title: title, content: content}, function(data){
             switch (data)
             {
-            case '-11':
+            case -11:
                 alert('您还没有登录，无法提交日报,请先登录！');
                 showUserLoginForm();
             break;
-            case '-1':
+            case -1:
                 alert('日报标题不能为空！');
                 $("#write_daily_form_title").focus();
             break;
-            case '-2':
+            case -2:
                 alert('同名日报已经存在！');
                 $("#write_daily_form_title").focus();
             break;
-            case '-3':
+            case -3:
                 alert('日报内容不能为空！');
                 $("#write_daily_form_content").focus();
             break;
-            case '1':
+            case 1:
                 alert('日报提交成功！');
                 closeWriteDailyForm();
                 updateDailyTable();

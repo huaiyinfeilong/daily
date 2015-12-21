@@ -28,7 +28,7 @@ class UserModel extends Model
         array('mobile', '', -13, self::EXISTS_VALIDATE, 'unique', self::MODEL_BOTH),    // 手机号码已被注册
         // 验证QQ号码
         array('qq', 'require', -14, self::EXISTS_VALIDATE, 'regex', self::MODEL_BOTH),     // QQ号码不能为空
-        array('qq', '/^1[0-9]{5,10}$/', -15, self::EXISTS_VALIDATE, 'regex', self::MODEL_BOTH),    // QQ号码格式错误
+        array('qq', '/^[1-9][0-9]{5,10}$/', -15, self::EXISTS_VALIDATE, 'regex', self::MODEL_BOTH),    // QQ号码格式错误
         array('qq', '', -16, self::EXISTS_VALIDATE, 'unique', self::MODEL_BOTH),    // QQ号码已被注册
         // 验证微信号码
         array('weixin', 'require', -17, self::EXISTS_VALIDATE, 'regex', self::MODEL_BOTH),     // 微信号码不能为空
