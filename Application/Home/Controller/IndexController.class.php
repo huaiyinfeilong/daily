@@ -10,6 +10,9 @@ class IndexController extends Controller
     {
         // 自动登录
         $this->autoLogin();
+        if (!session('user'))
+            $this->redirect('/login');
+
         // 传递session中的user到前端
         $this->user = session('user');
 
@@ -40,5 +43,10 @@ class IndexController extends Controller
         session('user', $userSession);
 
         return true;
+    }
+
+    public function login()
+    {
+        $this->display();
     }
 }

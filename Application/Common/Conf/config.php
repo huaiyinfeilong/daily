@@ -15,6 +15,8 @@ return array(
     'URL_ROUTER_ON'=>true,
     'URL_MODEL'=>2,
     'URL_ROUTE_RULES'=>array(
+        // 外网访问登录路由
+        'login$'=>'Home/Index/login',
         // API模块路由
         'api/user/register$'=>'Api/User/register',    // 用户注册
         'api/user/login'=>'Api/user/login',    // 用户登录
