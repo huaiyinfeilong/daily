@@ -150,7 +150,7 @@ function updateDailyTable()
             if (data)
         {
         for (var i = 0; i < data.length; i++)
-                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" onclick="detailDaily(' + data[i].id + ')" href="javascript:;">' + data[i].title + '</a></td><td>' + data[i].author + '</td><td>' + data[i].update_time + '</td><td><a class="daily-item-edit" onclick="editDaily(' + data[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" onclick="window.confirm(\'您确认要删除日报“' + data[i].title + '”吗？删除后将不可恢复！\')?deleteDaily(' + data[i].id + '):return false;" href="javascript:;">删除</a></td></tr>');
+                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" onclick="detailDaily(' + data[i].id + ')" href="javascript:;">' + data[i].title + '</a></td><td>' + data[i].author + '</td><td>' + data[i].update_time + '</td><td><a class="daily-item-edit" onclick="editDaily(' + data[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" onclick="if (window.confirm(\'您确认要删除日报“' + data[i].title + '”吗？删除后将不可恢复！\') deleteDaily(' + data[i].id + ') else return false;" href="javascript:;">删除</a></td></tr>');
         }
     });
 }
