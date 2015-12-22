@@ -217,19 +217,19 @@ $(function(){
         $.post('{:U('api/user/login')}', {username: username, password: password, type: (rememberPassword? 1 : 0)}, function(data){
             switch (data)
             {
-            case -1:
+            case -101:
                 alert('用户名不能为空！');
                 $("#user_login_form_username").focus();
             break;
-            case -2:
+            case -102:
                 alert('密码不能为空！');
                 $("#user_login_form_password").focus();
             break;
-            case -3:
+            case -103:
                 alert('用户不存在！');
                 $("#user_login_form_username").focus();
             break;
-            case -4:
+            case -104:
                 alert('密码不正确！');
                 $("#user_login_form_password").focus();
             break;

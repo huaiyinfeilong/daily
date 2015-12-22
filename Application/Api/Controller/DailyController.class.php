@@ -6,14 +6,24 @@ use Think\Controller;
 
 class DailyController extends Controller
 {
+    public function _initialize()
+    {
+        if (!$this->isLogined())
+        {
+            $this->ajaxReturn(-10001);
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    // 新建日报
     public function create()
     {
         if (!IS_POST)
             return false;
-
-        // 用户登录态检查
-        if (!$this->isLogined())
-            $this->ajaxReturn(-11);
 
         $db = D('Daily');
         $data = I();
@@ -63,22 +73,19 @@ class DailyController extends Controller
         $this->ajaxReturn($data);
     }
 
+    // 删除日报
     public function deleteDaily($id = null)
     {
         if (!IS_POST)
             return false;
 
-        $userSession = session('user');
-        if (!$userSession)
-            $this->ajaxReturn(-1);    // 没有登录
-
         $daily = M('Daily');
         $rs = $daily->find($id);
         if (!$rs)
-            $this->ajaxReturn(-2);    // 没有找到日报
+            $this->ajaxReturn(-101);    // 没有找到日报
 
         if ($rs['uid'] != $userSession['uid'])
-            $this->ajaxReturn(-3);    // 用户只能删除自己编写的日报
+            $this->ajaxReturn(-102);    // 用户只能删除自己编写的日报
 
         $daily->delete($id);
         $this->ajaxReturn(1);
@@ -90,7 +97,7 @@ class DailyController extends Controller
         $daily = M('Daily');
         $rs = $daily->find($id);
         if (!$rs)
-            $this->ajaxReturn(-1);    // 日报没有找到
+            $this->ajaxReturn(-101);    // 日报没有找到
 
         $data['title'] = $rs['title'];
         $user = M('User')->find($rs['uid']);
@@ -98,5 +105,36 @@ class DailyController extends Controller
         $data['update_time'] = date('Y-m-d H:i:s', $rs['update_time']);
         $data['content'] = $rs['content'];
         $this->ajaxReturn($data);
+    }
+
+    // 编辑日报
+    public function editDaily($id = 0, $title = '', $content = '')
+    {
+        if (!IS_POST)
+            return false;
+
+        $daily = D('Daily');
+        $rs = $daily->field('uid')->find($id);
+        if (!$rs)
+            $this->ajaxReturn(-101);    // 日报不存在
+
+        $userSession = session('user');
+        $uid = $userSession['uid'];
+        if ($rs['uid'] != $uid)
+            $this->ajaxReturn(-102);    // 无权编辑他人日报
+
+        $data = array();
+        $data['id'] = $id;
+        $data['title'] = $title;
+        $data['content'] = $content;
+        if ($daily->create($data))
+        {
+            $daily->save();
+            $this->ajaxReturn(1);
+        }
+        else
+        {
+            $this->ajaxReturn($daily->getError());
+        }
     }
 }

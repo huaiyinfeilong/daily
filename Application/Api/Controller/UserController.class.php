@@ -37,21 +37,21 @@ class UserController extends Controller
 
         // 用户名不能为空
         if (empty($username))
-            $this->ajaxReturn(-1);
+            $this->ajaxReturn(-101);
 
         // 密码不能为空
         if (empty($password))
-            $this->ajaxReturn(-2);
+            $this->ajaxReturn(-102);
 
         $db = M('User');
         $rs = $db->where(array('username'=>$username, 'email'=>$username, 'mobile'=>$username, 'qq'=>$username, 'weixin'=>$username, '_logic'=>'OR'))->find();
         // 用户不存在
         if (!$rs)
-            $this->ajaxReturn(-3);
+            $this->ajaxReturn(-103);
 
         // 密码不正确
         if ($rs['password'] != md5($password))
-            $this->ajaxReturn(-4);
+            $this->ajaxReturn(-104);
 
         // 保存用户信息到session
         session('user', array('uid'=>$rs['id'], 'username'=>$rs['username'], 'client_ip'=>get_client_ip()));
@@ -85,7 +85,7 @@ class UserController extends Controller
         // 获取除password以外的所有字段
         $rs = $db->field('password', true)->select();
         if (!$rs)
-            $this->ajaxReturn(-1);
+            $this->ajaxReturn(-101);
 
         $this->ajaxReturn($rs);
     }
@@ -97,7 +97,7 @@ class UserController extends Controller
 
         $userSession = session('user');
         if (!$userSession)
-            $this->ajaxReturn(-1);    // 用户没有登录
+            $this->ajaxReturn(-10001);    // 用户没有登录
 
         $user = M('User')->field('password', true)->find($userSession['uid']);
         $this->ajaxReturn($user);
