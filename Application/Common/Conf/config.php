@@ -23,7 +23,7 @@ return array(
         'api/user/logout$'=>'Api/User/logout',    // 用户退出登录
         'api/user/list$'=>'Api/User/listUser',
         'api/user/profile$'=>'Api/User/profile',
-        'api/daily/create$'=>'Api/Daily/create',
+        'api/daily/create$'=>'Api/Daily/createDaily',
         'api/daily/list$'=>'Api/Daily/listDaily',
         'api/daily/delete$'=>'Api/Daily/deleteDaily',
         'api/daily/detail$'=>'Api/Daily/detailDaily',    // 日报内容详情
