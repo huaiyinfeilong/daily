@@ -27,6 +27,7 @@ return array(
         'api/daily/list$'=>'Api/Daily/listDaily',
         'api/daily/delete$'=>'Api/Daily/deleteDaily',
         'api/daily/detail$'=>'Api/Daily/detailDaily',    // 日报内容详情
+        'api/daily/edit$'=>'Api/Daily/editDaily',
         'api/daily/owner$'=>'Api/Daily/owner',
     ),
 

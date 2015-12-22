@@ -334,6 +334,24 @@ $(function(){
             closeDailyDetailView();
         });
 
+    // 点击日报编辑表单中的提交按钮
+    $("#btn_edit_daily_form_edit").click(function(){
+        var id = $("#edit_daily_form_id").val();
+        var title = $("#edit_daily_form_title").val();
+        var content = $("#edit_daily_form_content").val();
+        $.post('{:U('/api/daily/edit')}', {id: id, title: title, content: content}, function(data){
+            switch (data)
+            {
+
+            case -101:
+                alert('日报没有找到！');
+            break;
+            case -102:
+            break;
+            }
+        });
+    });
+
 });
 </script>
 </body>
