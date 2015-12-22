@@ -20,13 +20,14 @@ class DailyController extends Controller
     }
 
     // 新建日报
-    public function create()
+    public function createDaily()
     {
         if (!IS_POST)
             return false;
 
         $db = D('Daily');
         $data = I();
+        $data['content'] = str_replace('\r\n', '<br />', $data['content']);
         $user = session('user');
         $data['uid'] = $user['uid'];
         if ($db->create($data))
