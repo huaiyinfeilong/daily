@@ -84,6 +84,7 @@ class DailyController extends Controller
         if (!$rs)
             $this->ajaxReturn(-101);    // 没有找到日报
 
+        $userSession = session('user');
         if ($rs['uid'] != $userSession['uid'])
             $this->ajaxReturn(-102);    // 用户只能删除自己编写的日报
 
@@ -99,6 +100,7 @@ class DailyController extends Controller
         if (!$rs)
             $this->ajaxReturn(-101);    // 日报没有找到
 
+        $data = array();
         $data['title'] = $rs['title'];
         $user = M('User')->find($rs['uid']);
         $data['author'] = $user['username'];
@@ -136,5 +138,23 @@ class DailyController extends Controller
         {
             $this->ajaxReturn($daily->getError());
         }
+    }
+
+    // 判断指定的日报是否归属自己
+    public function owner($id = 0)
+    {
+        if (!IS_POST)
+            return false;
+
+        $daily = M('Daily');
+        $rs = $daily->find($id);
+        if (!$rs)
+            $this->ajaxReturn(-101);    // 日报不存在
+
+        $userSession = session('user');
+        if ($rs['uid'] != $userSession['uid'])
+            $this->ajaxReturn(-102);    // 日报所有者不是当前登录的用户
+
+        $this->ajaxReturn(1);    // 日报是当前用户所有
     }
 }

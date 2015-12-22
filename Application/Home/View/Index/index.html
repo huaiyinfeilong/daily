@@ -140,7 +140,7 @@ function detailDaily(id)
     $.post('{:U('/api/daily/detail')}', {id: id}, function(data){
         switch (data)
         {
-        case -1:
+        case -101:
             alert('日报没有找到！');
         break;
         default:
@@ -162,7 +162,7 @@ function updateDailyTable()
             if (data)
         {
         for (var i = 0; i < data.length; i++)
-                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" onclick="detailDaily(' + data[i].id + ')" href="javascript:;">' + data[i].title + '</a></td><td>' + data[i].author + '</td><td>' + data[i].update_time + '</td><td><a class="daily-item-edit" onclick="editDaily(' + data[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" onclick="if (window.confirm(\'您确认要删除日报“' + data[i].title + '”吗？删除后将不可恢复！\')) deleteDaily(' + data[i].id + '); else return false;" href="javascript:;">删除</a></td></tr>');
+                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" id="daily_item' + data[i].id + '_detail" onclick="detailDaily(' + data[i].id + ')" href="javascript:;">' + data[i].title + '</a></td><td>' + data[i].author + '</td><td>' + data[i].update_time + '</td><td><a class="daily-item-edit" id="daily_item' + data[i].id + '_edit" onclick="editDaily(' + data[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" id="daily_item' + data[i].id + '_delete" onclick="deleteDaily(' + data[i].id + ')" href="javascript:;">删除</a></td></tr>');
         }
     });
 }
@@ -170,25 +170,46 @@ function updateDailyTable()
 // 删除日报
 function deleteDaily(id)
 {
-    $.post('{:U('/api/daily/delete')}', {id: id}, function(data){
-        switch (data)
+    $.post('{:U('/api/daily/owner')}', {id: id}, function(data){
+        if (data == -101)
         {
-        case -1:
-            alert('您尚未登录，无法进行此操作！');
-        break;
-        case -2:
-            alert('您要删除的日报不存在！');
-        break;
-        case -3:
-            alert('您无权删除他人日报！');
-        break;
-        case 1:
-            alert('删除成功！');
-            updateDailyTable();
-        break;
-        default:
-            alert('未知错误，');
-        break;
+            alert('日报不存在！');
+            return true;
+        }
+        else if (data == -102)
+        {
+            alert('你无权删除他人日报！');
+            return true;
+        }
+        else if (data == 1)
+        {
+            if (!window.confirm('您确认要删除日报“' + $("#daily_item" + id + "_detail").html() +'”吗？删除后将不可恢复！'))
+                return true;
+            $.post('{:U('/api/daily/delete')}', {id: id}, function(data){
+                switch (data)
+                {
+                case -10001:
+                    alert('您尚未登录，无法进行此操作！');
+                break;
+                case -101:
+                    alert('您要删除的日报不存在！');
+                break;
+                case -102:
+                    alert('您无权删除他人日报！');
+                break;
+                case 1:
+                    alert('删除成功！');
+                    updateDailyTable();
+                break;
+                default:
+                    alert('未知错误，');
+                break;
+                }
+            });
+        }
+        else
+        {
+            alert('未知错误，请联系管理员！');
         }
     });
 }
@@ -203,18 +224,38 @@ function showEditDailyForm()
 // 编辑日报
 function editDaily(id)
 {
-    $.post('{:U('/api/daily/detail')}', {id: id}, function(data){
-        $("#edit_daily_form_title").val(data.title);
-        $("#edit_daily_form_content").val(data.content);
-        $("#edit_daily_form_id").val(id.toString());
+    $.post('{:U('/api/daily/owner')}', {id: id}, function(data){
+        if (data == -101)
+        {
+            alert('日报不存在！');
+            return true;
+        }
+        else if (data == -102)
+        {
+            alert('你无权编辑他人日报！');
+            return true;
+        }
+        else if (data == 1)
+        {
+            $.post('{:U('/api/daily/detail')}', {id: id}, function(data){
+                $("#edit_daily_form_title").val(data.title);
+                $("#edit_daily_form_content").val(data.content);
+                $("#edit_daily_form_id").val(id.toString());
+            });
+            showEditDailyForm();
+        }
+        else
+        {
+            alert('未知错误，请联系管理员！');
+        }
     });
-    showEditDailyForm();
 }
 
 // 关闭日报编辑表单
 function closeEditDailyForm()
 {
     $("#edit_daily_form_view").hide();
+    $("#daily_item" + $("#edit_daily_form_id").val() + "_edit").focus();
 }
 
 // 事件处理
@@ -255,7 +296,7 @@ $(function(){
         $.post('{:U('/api/daily/create')}', {title: title, content: content}, function(data){
             switch (data)
             {
-            case -11:
+            case -101:
                 alert('您还没有登录，无法提交日报,请先登录！');
                 showUserLoginForm();
             break;
