@@ -32,7 +32,7 @@ class UserModel extends Model
         array('qq', '', -16, self::EXISTS_VALIDATE, 'unique', self::MODEL_BOTH),    // QQ号码已被注册
         // 验证微信号码
         array('weixin', 'require', -17, self::EXISTS_VALIDATE, 'regex', self::MODEL_BOTH),     // 微信号码不能为空
-        array('weixin', '/^[a-zA-Z][a-zA-Z_0-9]{5,20}$/', -18, self::EXISTS_VALIDATE, 'regex', self::MODEL_BOTH),    // 微信号码格式错误
+        array('weixin', '/^[a-zA-Z1-9][a-zA-Z_0-9]{5,20}$/', -18, self::EXISTS_VALIDATE, 'regex', self::MODEL_BOTH),    // 微信号码格式错误
         array('weixin', '', -19, self::EXISTS_VALIDATE, 'unique', self::MODEL_BOTH),    // 微信号码已被注册
 
 
