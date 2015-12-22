@@ -149,7 +149,7 @@ function detailDaily(id)
             $(".daily-detail-title").html(data.title);
             $(".daily-detail-author").html(data.author);
             $(".daily-detail-update-time").html(data.update_time);
-            $(".daily-detail-content").html(data.content);
+            $(".daily-detail-content").html(data.content.replace('\n', '<br />'));
             $("#daily_detail_view_id").val(id.toString());
             showDailyDetailView();
         break;
