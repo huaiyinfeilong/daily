@@ -67,6 +67,7 @@
             <div class="daily-detail-title"></div>
             <div><span class="daily-detail-author"></span><span class="daily-detail-update-time"></span></div>
             <div class="daily-detail-content"></div>
+            <div><input type="hidden" id="daily_detail_view_id" value="" /></div>
             <div class="daily-detail-close"><button id="btn_daily_detail_close" type="button">关闭</button></div>
         </div>
         <!-- 日报内容结束 -->
@@ -125,6 +126,7 @@ function clearDailyDetailView()
     $(".daily-detail-author").html('');
     $(".daily-detail-update-time").html('');
     $(".daily-detail-content").html('');
+    $("#daily_detail_view_id").val('');
 }
 
 // 关闭日报详情视图
@@ -148,6 +150,7 @@ function detailDaily(id)
             $(".daily-detail-author").html(data.author);
             $(".daily-detail-update-time").html(data.update_time);
             $(".daily-detail-content").html(data.content);
+            $("#daily_detail_view_id").val(id.toString());
             showDailyDetailView();
         break;
         }
@@ -331,8 +334,9 @@ $(function(){
 
     // 点击日报详情内容视图中的关闭按钮
     $("#btn_daily_detail_close").click(function(){
+        $("#daily_item" + $("#daily_detail_view_id").val() + "_detail").focus();
             closeDailyDetailView();
-        });
+    });
 
     // 点击日报编辑表单中的提交按钮
     $("#btn_edit_daily_form_edit").click(function(){
