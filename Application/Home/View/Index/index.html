@@ -160,12 +160,13 @@ function detailDaily(id)
 // 更新日报列表
 function updateDailyTable()
 {
-    $.post('{:U('/api/daily/list')}', {}, function(data){
+    $.post('{:U('/api/daily/list')}', {uid: 0, page: 1}, function(data){
         $("#daily_table_tbody").html('');
             if (data)
         {
-        for (var i = 0; i < data.length; i++)
-                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" id="daily_item' + data[i].id + '_detail" onclick="detailDaily(' + data[i].id + ')" href="javascript:;">' + data[i].title + '</a></td><td>' + data[i].author + '</td><td>' + data[i].update_time + '</td><td><a class="daily-item-edit" id="daily_item' + data[i].id + '_edit" onclick="editDaily(' + data[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" id="daily_item' + data[i].id + '_delete" onclick="deleteDaily(' + data[i].id + ')" href="javascript:;">删除</a></td></tr>');
+        var dailyList = data.data;
+        for (var i = 0; i < dailyList.length; i++)
+                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" id="daily_item' + dailyList[i].id + '_detail" onclick="detailDaily(' + dailyList[i].id + ')" href="javascript:;">' + dailyList[i].title + '</a></td><td>' + dailyList[i].author + '</td><td>' + dailyList[i].update_time + '</td><td><a class="daily-item-edit" id="daily_item' + dailyList[i].id + '_edit" onclick="editDaily(' + dailyList[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" id="daily_item' + dailyList[i].id + '_delete" onclick="deleteDaily(' + dailyList[i].id + ')" href="javascript:;">删除</a></td></tr>');
         }
     });
 }
@@ -360,7 +361,6 @@ $(function(){
                 alert('提交成功！');
                 closeEditDailyForm();
                 updateDailyTable();
-                $("#daily_item" + id + "_edit").focus();
             break;
             default:
                 alert('未知错误，请联系管理员！');

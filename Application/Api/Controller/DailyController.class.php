@@ -49,18 +49,36 @@ class DailyController extends Controller
         return true;
     }
 
-    public function listDaily()
+    public function listDaily($uid = 0, $page = 1, $size = 18)
     {
         if (!IS_POST)
             return false;
 
+        $user = M('User');
         $db = M('Daily');
-        $rs = $db->select();
+        $rs = null;
+
+        if ($uid == 0)
+        {
+            $data['total'] = (int)$db->field('id')->count();
+            $rs = $db->select();
+        }
+        else
+        {
+            $rs = $user->find($uid);
+            if (!$rs)
+            {
+                $this->ajaxReturn(-101);    // 用户不存在
+            }
+            $data['total'] = (int)$db->field('id')->where(array('uid'=>$uid))->count();
+            $rs = $db->limit(array(($page - 1) * $size, $size))->select();
+        }
         if (!$rs)
             return false;
 
-        $data = array();
-        $user = M('User');
+        $data['curpage'] = (int)$page;
+        $data['pagenum'] = (int)(($data['total'] + $size) / $size);
+        $data['data'] = array();
         foreach ($rs as $item)
         {
             $uid = $item['uid'];
@@ -68,7 +86,7 @@ class DailyController extends Controller
             unset($item['uid']);
             $item['author'] = $d['username'];
             $item['update_time'] = date('Y-m-d H:i:s', $item['update_time']);
-            array_push($data, $item);
+            array_push($data['data'], $item);
         }
         $this->ajaxReturn($data);
     }
