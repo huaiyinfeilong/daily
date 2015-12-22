@@ -30,6 +30,7 @@
         <div class="dynamic-view">
             <!-- 日报撰写表单开始 -->
             <div id="write_daily_form_view" style="display:none;">
+                <div><h1>撰写日报</h1></div>
                 <div><label for="write_daily_form_title">日报标题：</label><input type="text" id="write_daily_form_title" value="" size="100" maxsize="100" /></div>
                 <div><label for="write_daily_form_content">日报正文：</label></div>
                 <div><textarea id="write_daily_form_content" rows="50" cols="50"></textarea></div>
@@ -37,6 +38,17 @@
                 <div><button id="btn_write_daily_form_close" type="button">关闭</button></div>
             </div>
             <!-- 日报撰写表单结束 -->
+            <!-- 日报编辑表单开始 -->
+            <div id="edit_daily_form_view" style="display:none;">
+                <div><h1>编辑日报</h1></div>
+                <div><label for="edit_daily_form_title">日报标题：</label><input type="text" id="edit_daily_form_title" value="" size="100" maxsize="100" /></div>
+                <div><label for="edit_daily_form_content">日报正文：</label></div>
+                <div><textarea id="edit_daily_form_content" rows="50" cols="50"></textarea></div>
+                <div><input type="hidden" id="edit_daily_form_id" value="" /></div>
+                <div><button id="btn_edit_daily_form_edit" type="button">提交</button></div>
+                <div><button id="btn_edit_daily_form_close" type="button">关闭</button></div>
+            </div>
+            <!-- 日报编辑表单结束 -->
         </div>
         <!-- 日报列表开始 -->
         <div class="daily-list">
@@ -155,11 +167,6 @@ function updateDailyTable()
     });
 }
 
-// 编辑日报
-function editDaily(id)
-{
-}
-
 // 删除日报
 function deleteDaily(id)
 {
@@ -184,6 +191,30 @@ function deleteDaily(id)
         break;
         }
     });
+}
+
+// 显示日报编辑表单
+function showEditDailyForm()
+{
+    $("#edit_daily_form_view").show();
+    $("#edit_daily_form_content").focus();
+}
+
+// 编辑日报
+function editDaily(id)
+{
+    $.post('{:U('/api/daily/detail')}', {id: id}, function(data){
+        $("#edit_daily_form_title").val(data.title);
+        $("#edit_daily_form_content").val(data.content);
+        $("#edit_daily_form_id").val(id.toString());
+    });
+    showEditDailyForm();
+}
+
+// 关闭日报编辑表单
+function closeEditDailyForm()
+{
+    $("#edit_daily_form_view").hide();
 }
 
 // 事件处理
@@ -250,6 +281,11 @@ $(function(){
             break;
             }
         });
+    });
+
+    // 点击日报编辑表单中的关闭按钮
+    $("#btn_edit_daily_form_close").click(function(){
+        closeEditDailyForm();
     });
 
     // 点击日报详情内容视图中的关闭按钮
