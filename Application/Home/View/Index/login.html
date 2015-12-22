@@ -101,6 +101,7 @@ $(function(){
     $("#link_user_register").click(function(){
         if ($("#user_register_form_view").is(":hidden"))
         {
+            document.title = '注册_{:C('WEBSITE_TITLE')}';
             closeUserLoginForm();
             showUserRegisterForm();
         }
@@ -202,6 +203,7 @@ $(function(){
     $("#link_user_login").click(function(){
         if ($("#user_login_form_view").is(":hidden"))
         {
+            document.title = '登录_{:C('WEBSITE_TITLE')}';
             closeUserRegisterForm();
             showUserLoginForm();
         }
