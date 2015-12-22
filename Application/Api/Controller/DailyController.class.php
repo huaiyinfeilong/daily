@@ -27,7 +27,7 @@ class DailyController extends Controller
 
         $db = D('Daily');
         $data = I();
-        $data['content'] = str_replace('\r\n', '<br />', $data['content']);
+        $data['content'] = str_replace('\n', '<br />', $data['content']);
         $user = session('user');
         $data['uid'] = $user['uid'];
         if ($db->create($data))
