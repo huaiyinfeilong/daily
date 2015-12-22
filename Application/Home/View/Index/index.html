@@ -346,11 +346,23 @@ $(function(){
         $.post('{:U('/api/daily/edit')}', {id: id, title: title, content: content}, function(data){
             switch (data)
             {
-
+            case -10001:
+                alert('你还没有登录，请登录后在进行操作');
+                location.href = "{:U('/')}";
+            break;
             case -101:
                 alert('日报没有找到！');
             break;
             case -102:
+                alert('你无权编辑他人日报');
+            break;
+            case 1:
+                alert('提交成功！');
+                closeEditDailyForm();
+                $("#daily_item" + id + "_edit").focus();
+            break;
+            default:
+                alert('未知错误，请联系管理员！');
             break;
             }
         });
