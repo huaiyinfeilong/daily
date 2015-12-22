@@ -242,7 +242,7 @@ function editDaily(id)
         {
             $.post('{:U('/api/daily/detail')}', {id: id}, function(data){
                 $("#edit_daily_form_title").val(data.title);
-                $("#edit_daily_form_content").val(data.content.replace('<br />', '\r\n');
+                $("#edit_daily_form_content").val(data.content.replace('<br />', '\r\n'));
                 $("#edit_daily_form_id").val(id.toString());
             });
             showEditDailyForm();
