@@ -5,7 +5,7 @@ return array(
     'WEBSITE_TITLE'=>'项目部日报管理系统',
     // 数据库配置
     'DB_TYPE'=>'mysql',
-    'DB_HOST'=>'localhost',
+    'DB_HOST'=>'127.0.0.1',
     'DB_PORT'=>'3306',
     'DB_NAME'=>'daily',
     'DB_USER'=>'root',
