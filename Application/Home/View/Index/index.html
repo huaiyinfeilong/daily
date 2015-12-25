@@ -181,7 +181,7 @@ function turnPage(page)
 // 更新日报列表
 function updateDailyTable(page)
 {
-    $.post('{:U('/api/daily/list')}', {uid: g_uid, page: page, size: 2}, function(data){
+    $.post('{:U('/api/daily/list')}', {uid: g_uid, page: page, size: 9}, function(data){
         $("#daily_table_tbody").html('');
             if (data)
         {
