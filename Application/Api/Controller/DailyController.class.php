@@ -71,7 +71,7 @@ class DailyController extends Controller
                 $this->ajaxReturn(-101);    // 用户不存在
             }
             $data['total'] = (int)$db->field('id')->where(array('uid'=>$uid))->count();
-            $rs = $db->limit(array(($page - 1) * $size, $size))->select();
+            $rs = $db->limit(array(($page - 1) * $size, $size))->where(array('uid'=>$uid))->select();
         }
         if (!$rs)
             return false;

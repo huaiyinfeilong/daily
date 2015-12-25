@@ -78,6 +78,9 @@
 </div>
 
 <script type="text/javascript">
+// 全局变量定义
+var g_uid = 0;    // 当前用户列表中选定的用户的ID
+
 // 清空日报撰写表单
 function clearWriteDailyForm()
 {
@@ -88,10 +91,11 @@ function clearWriteDailyForm()
 // 更新用户组合框
 function updateUserSelector()
 {
+        $("#user_selector").html('');
+    $("#user_selector").append('<option value="0">所有人</option>');
     $.post('{:U('/api/user/list')}', {}, function(data){
-            $("#user_selector").html('');
             for (var i = 0; i < data.length; i++)
-                $("#user_selector").append('<option value="' + data[i].id + '">' + data[i].username + '</option>');
+            $("#user_selector").append('<option value="' + data[i].id + '">' + data[i].username + '</option>');
     });
 }
 
@@ -160,7 +164,7 @@ function detailDaily(id)
 // 更新日报列表
 function updateDailyTable()
 {
-    $.post('{:U('/api/daily/list')}', {uid: 0, page: 1}, function(data){
+    $.post('{:U('/api/daily/list')}', {uid: g_uid, page: 1}, function(data){
         $("#daily_table_tbody").html('');
             if (data)
         {
@@ -367,6 +371,12 @@ $(function(){
             break;
             }
         });
+    });
+
+    // 用户改变了用户列表中的选定用户
+    $("#user_selector").change(function(){
+        g_uid = $(this).val();
+        updateDailyTable();
     });
 
 });
