@@ -244,6 +244,18 @@ $(function(){
         });
     });
 
+    // 用户登录表单输入框回车提交
+    $("#user_login_form_username,#user_login_form_password,#user_login_form_remember_password").keypress(function(e){
+        if (e.keyCode == 13)
+            $("#btn_user_login_form_login").click();
+    });
+
+    // 用户登录表单输入框回车提交
+    $("#user_register_form_username,#user_register_form_password,#user_register_form_password2,#user_register_form_email,#user_register_form_mobile,#user_register_form_qq,#user_register_form_weixin").keypress(function(e){
+        if (e.keyCode == 13)
+            $("#btn_user_register_form_register").click();
+    });
+
 });
 </script>
 </body>
