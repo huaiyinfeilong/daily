@@ -61,7 +61,7 @@ class DailyController extends Controller
         if ($uid == 0)
         {
             $data['total'] = (int)$db->field('id')->count();
-            $rs = $db->select();
+            $rs = $db->order('`update_time` DESC')->limit((string)(($page - 1) * $size) . ',' . (string)($size))->select();
         }
         else
         {
@@ -71,13 +71,15 @@ class DailyController extends Controller
                 $this->ajaxReturn(-101);    // 用户不存在
             }
             $data['total'] = (int)$db->field('id')->where(array('uid'=>$uid))->count();
-            $rs = $db->limit(array(($page - 1) * $size, $size))->where(array('uid'=>$uid))->select();
+            $rs = $db->order('`update_time` DESC')->limit((string)(($page - 1) * $size) . ',' . (string)($size))->where(array('uid'=>$uid))->select();
         }
         if (!$rs)
             return false;
 
         $data['curpage'] = (int)$page;
-        $data['pagenum'] = (int)(($data['total'] + $size) / $size);
+        $data['pagenum'] = (int)($data['total'] / $size);
+        if ($data['total'] % $size != 0)
+            $data['pagenum']++;
         $data['data'] = array();
         foreach ($rs as $item)
         {
