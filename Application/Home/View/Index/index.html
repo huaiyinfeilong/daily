@@ -216,20 +216,23 @@ function updateDailyTable(page)
 function deleteDaily(id)
 {
     $.post('{:U('/api/daily/owner')}', {id: id}, function(data){
-        if (data == -101)
+        switch (data)
         {
+        case -10001:
+            alert('您尚未登录，无法进行此操作！');
+        break;
+        case -10002:
+            alert('您的账户已被管理员禁用，无法进行此操作！');
+        break;
+        case -101:
             alert('日报不存在！');
-            return true;
-        }
-        else if (data == -102)
-        {
+        break;
+        case -102:
             alert('你无权删除他人日报！');
-            return true;
-        }
-        else if (data == 1)
-        {
+        break;
+        case 1:
             if (!window.confirm('您确认要删除日报“' + $("#daily_item" + id + "_detail").html() +'”吗？删除后将不可恢复！'))
-                return true;
+                break;
             $.post('{:U('/api/daily/delete')}', {id: id}, function(data){
                 switch (data)
                 {
@@ -254,10 +257,10 @@ function deleteDaily(id)
                 break;
                 }
             });
-        }
-        else
-        {
+        break;
+        default:
             alert('未知错误，请联系管理员！');
+        break;
         }
     });
 }
@@ -273,28 +276,31 @@ function showEditDailyForm()
 function editDaily(id)
 {
     $.post('{:U('/api/daily/owner')}', {id: id}, function(data){
-        if (data == -101)
+        switch (data)
         {
+        case -10001:
+            alert('您尚未登录，无法进行此操作！');
+        break;
+        case -10002:
+            alert('您的账户已被管理员禁用，无法进行此操作！');
+        break;
+        case -101:
             alert('日报不存在！');
-            return true;
-        }
-        else if (data == -102)
-        {
+        break;
+        case -102:
             alert('你无权编辑他人日报！');
-            return true;
-        }
-        else if (data == 1)
-        {
+        break;
+        case 1:
             $.post('{:U('/api/daily/detail')}', {id: id}, function(data){
                 $("#edit_daily_form_title").val(data.title);
                 $("#edit_daily_form_content").val(data.content);
                 $("#edit_daily_form_id").val(id.toString());
             });
             showEditDailyForm();
-        }
-        else
-        {
+        break;
+        default:
             alert('未知错误，请联系管理员！');
+        break;
         }
     });
 }
