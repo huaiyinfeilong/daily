@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>后台登录_{:C('WEBSITE_TITLE')}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<load href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<load href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+</head>
+<body>
+<div class="container">
+    <!-- 登录表单开始 -->
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1 page-header">后台登录</h1>
+            <div class="input-group">
+                <label for="username">用户名：</label><input type="text" class="form-control" id="username" maxlength="20" />
+            </div>
+            <div class="input-group">
+                <label for="password">密&nbsp;&nbsp;码：</label><input type="password" class="form-control" id="password" maxlength="20" />
+            </div>
+            <button id="btn_login" type="button" class="btn btn-default">登录</button>
+        </div>
+    </div>
+    <!-- 登录表单结束 -->
+
+    <!-- 版权信息开始 -->
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p>版权所有 &copy; {:date('Y')} <a href="http://www.siaa.org.cn" target="_blank">信息无障碍研究会</a></p>
+        </div>
+    </div>
+    <!-- 版权信息结束 -->
+
+</div>
+
+<load href="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js" />
+<load href="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js" />
+
+<script type="text/javascript">
+$(function(){
+    // 在登录表单的输入控件上回车
+    $("#username, #password").keypress(function(e){
+        if (e.keyCode == 13)
+            $("#btn_login").click();
+    });
+
+    // 点击登录表单中的登录按钮
+    $("#btn_login").click(function(){
+        $.post('{:U('/admin/api/login')}', {username: $("#username").val(), password: $("#password").val()}, function(data){
+            switch (data)
+            {
+            case -101:
+                alert('用户名不能为空！');
+                $("#username").focus();
+            break;
+            case -102:
+                alert('密码不能为空！');
+                $("#password").focus();
+            break;
+            case -103:
+                alert('用户名或密码不正确！');
+                $("#username").focus();
+            break;
+            case 1:
+                alert('登录成功！');
+                location.href = "{:U('/admin/index')}";
+            break;
+            }
+        });
+    });
+
+});
+</script>
+</body>
+</html>

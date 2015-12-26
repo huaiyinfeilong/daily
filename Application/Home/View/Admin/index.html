@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>后台管理_{:C('WEBSITE_TITLE')}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<load href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<load href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+</head>
+<body>
+<div class="container">
+    <!-- 登录管理员信息 -->
+    <div class="row">
+        <div tabindex="0" class="col-md-12">
+            <span>当前登录管理员：</span><span>{:C('ADMIN_USERNAME')}</span>
+            <span>登录IP：</span><span>{:get_client_ip()}</span>
+        </div>
+    </div>
+
+    <!-- 管理菜单开始 -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="navbar navbar-default" role="navigation">
+                <ul class="nav nav-pills">
+                    <li><a href="{:U('/')}" target="_blank">浏览前台</a></li>
+                    <li class="active"><a id="navmenuitem_user_management" href="javascript:;">用户管理</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 管理菜单结束 -->
+
+    <!-- 用户列表开始 -->
+    <div id="user_list_view" class="row" style="display:none">
+        <div id="user_list" class="col-md-8">
+        </div>
+    </div>
+    <!-- 用户列表结束 -->
+
+    <!-- 版权信息开始 -->
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p>版权所有 &copy; {:date('Y')} <a href="http://www.siaa.org.cn" target="_blank">信息无障碍研究会</a></p>
+        </div>
+    </div>
+    <!-- 版权信息结束 -->
+
+</div>
+
+<load href="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js" />
+<load href="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js" />
+
+<script type="text/javascript">
+// 刷新用户列表
+function updateUserList()
+{
+    $.post('{:U('/admin/api/user/list')}', {}, function(data){
+        if (data == null)
+            return true;
+        $("#user_list").html('');
+        for (var i = 0; i < data.length; i++)
+            if (data[i].status == 1)
+                $("#user_list").append('<dl class="dl-horizontal"><dt><a id="user_item' + data[i].id + '_username" href="javascript:;">' + data[i].username + '</a></dt><dd><a id="user_item' + data[i].id + '_status" data-status="' + data[i].status + '" onclick="setUserStatus(' + data[i].id + ')" href="javascript:;">禁用</a></dd><dd><a id="user_item' + data[i].id + '_delete" onclick="deleteUser(' + data[i].id + ')" href="javascript:;">删除</a></dd></dl>');
+            else
+                $("#user_list").append('<dl class="dl-horizontal"><dt><a id="user_item' + data[i].id + '_username" href="javascript:;">' + data[i].username + '</a></dt><dd><a id="user_item' + data[i].id + '_status" data-status="' + data[i].status + '" onclick="setUserStatus(' + data[i].id + ')" href="javascript:;">启用</a></dd><dd><a id="user_item' + data[i].id + '_delete" onclick="deleteUser(' + data[i].id + ')" href="javascript:;">删除</a></dd></dl>');
+    });
+}
+
+// 删除用户
+function deleteUser(id)
+{
+    if (window.confirm('您确定要删除用户“' + $("#user_item" + id + "_username").html() + '”吗？这将同时删除其撰写的所有日报，且删除后将不可恢复！'))
+    {
+        $.post('{:U('/admin/api/user/delete')}', {id: id}, function(data){
+            switch (data)
+            {
+            case 1:
+                alert('删除成功！');
+                updateUserList();
+            break;
+            case -1:
+                alert('用户不存在！');
+            break;
+            default:
+                alert('删除失败！');
+            break;
+            }
+        });
+    }
+    else
+    {
+        return false;
+    }
+}
+
+// 设置用户状态
+function setUserStatus(id)
+{
+    var status = $(this).data('status');
+    var message = '';
+    if (status == 1)
+        message = '您确定要禁用用户“' + $("#user_item" + id + "_username").html() + '”吗？禁用后，该用户将无法登录系统，请谨慎操作！';
+    else
+        message = '您确定要启用用户“' + $("#user_item" + id + "_username").html() + '”吗？启用后，该用户将具有登录系统进行操作的权限，请谨慎操作！';
+    if (!window.confirm(message))
+    {
+        return false;
+    }
+
+    var newStatus;
+    if (status == 1)
+        newStatus = 0;
+    else
+        newStatus = 1;
+    $.post('{:U('/admin/api/user/setstatus')}', {id: id, status: newStatus}, function(data){
+        switch (data)
+        {
+        case -101:
+            alert('用户不存在！');
+        break;
+            case -102:
+                alert('参数错误！');
+            break;
+        case 1:
+            alert('操作成功！');
+            updateUserList();
+        break;
+            default:
+                alert('未知错误！');
+            break;
+        }
+    });
+}
+
+// 事件处理
+$(function(){
+    updateUserList();    // 更新用户列表
+    $("#user_list_view").show();    // 显示用户列表
+
+    // 点击管理菜单项：用户管理
+    $("#navmenuitem_user_management").click(function(){
+        updateUserList();    // 更新用户列表
+        $("#user_list_view").show();    // 显示用户列表
+    });
+
+});
+</script>
+</body>
+</html>
