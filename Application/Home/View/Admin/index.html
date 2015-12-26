@@ -97,7 +97,7 @@ function deleteUser(id)
 // 设置用户状态
 function setUserStatus(id)
 {
-    var status = $(this).data('status');
+    var status = $("#user_item" + id + "_status").data('status');
     var message = '';
     if (status == 1)
         message = '您确定要禁用用户“' + $("#user_item" + id + "_username").html() + '”吗？禁用后，该用户将无法登录系统，请谨慎操作！';

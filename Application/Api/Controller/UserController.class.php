@@ -2,9 +2,9 @@
 
 namespace Api\Controller;
 
-use Think\Controller;
+use Api\Controller;
 
-class UserController extends Controller
+class UserController extends AuthController
 {
     public function register()
     {
@@ -32,8 +32,8 @@ class UserController extends Controller
 
     public function login($username = '', $password = '', $type = 0)
     {
-        if (!IS_POST)
-            return true;
+//        if (!IS_POST)
+//            return true;
 
         // 用户名不能为空
         if (empty($username))

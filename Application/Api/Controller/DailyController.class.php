@@ -2,23 +2,10 @@
 
 namespace Api\Controller;
 
-use Think\Controller;
+use Api\Controller;
 
-class DailyController extends Controller
+class DailyController extends AuthController
 {
-    public function _initialize()
-    {
-        if (!$this->isLogined())
-        {
-            $this->ajaxReturn(-10001);
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
-
     // 新建日报
     public function createDaily()
     {
@@ -39,14 +26,6 @@ class DailyController extends Controller
         {
             $this->ajaxReturn($db->getError());
         }
-    }
-
-    protected function isLogined()
-    {
-        if (!session('user'))
-            return false;
-
-        return true;
     }
 
     public function listDaily($uid = 0, $page = 1, $size = 18)

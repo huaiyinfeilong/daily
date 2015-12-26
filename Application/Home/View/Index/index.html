@@ -157,6 +157,12 @@ function detailDaily(id)
     $.post('{:U('/api/daily/detail')}', {id: id}, function(data){
         switch (data)
         {
+                case -10001:
+                    alert('您尚未登录，无法进行此操作！');
+                break;
+                case -10002:
+                    alert('您的账户已被管理员禁用，无法进行此操作！');
+                break;
         case -101:
             alert('日报没有找到！');
         break;
@@ -229,6 +235,9 @@ function deleteDaily(id)
                 {
                 case -10001:
                     alert('您尚未登录，无法进行此操作！');
+                break;
+                case -10002:
+                    alert('您的账户已被管理员禁用，无法进行此操作！');
                 break;
                 case -101:
                     alert('您要删除的日报不存在！');
@@ -335,10 +344,13 @@ $(function(){
         $.post('{:U('/api/daily/create')}', {title: title, content: content}, function(data){
             switch (data)
             {
-            case -101:
+            case -10001:
                 alert('您还没有登录，无法提交日报,请先登录！');
                 showUserLoginForm();
             break;
+                case -10002:
+                    alert('您的账户已被管理员禁用，无法进行此操作！');
+                break;
             case -1:
                 alert('日报标题不能为空！');
                 $("#write_daily_form_title").focus();
@@ -386,6 +398,9 @@ $(function(){
                 alert('你还没有登录，请登录后在进行操作');
                 location.href = "{:U('/')}";
             break;
+                case -10002:
+                    alert('您的账户已被管理员禁用，无法进行此操作！');
+                break;
             case -101:
                 alert('日报没有找到！');
             break;
