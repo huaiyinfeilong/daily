@@ -53,6 +53,10 @@ class UserController extends Controller
         if ($rs['password'] != md5($password))
             $this->ajaxReturn(-104);
 
+        // 用户为激活
+        if ($rs['status'] != '1')
+            $this->ajaxReturn(-105);
+
         // 保存用户信息到session
         session('user', array('uid'=>$rs['id'], 'username'=>$rs['username'], 'client_ip'=>get_client_ip()));
         // 写入信息到cookie

@@ -3,6 +3,9 @@ return array(
     //'配置项'=>'配置值'
     // 网站名称
     'WEBSITE_TITLE'=>'项目部日报管理系统',
+    // 管理后台的用户名密码
+    'ADMIN_USERNAME'=>'admin',
+    'ADMIN_PASSWORD'=>'123456',
     // 数据库配置
     'DB_TYPE'=>'mysql',
     'DB_HOST'=>'127.0.0.1',
@@ -29,6 +32,14 @@ return array(
         'api/daily/detail$'=>'Api/Daily/detailDaily',    // 日报内容详情
         'api/daily/edit$'=>'Api/Daily/editDaily',
         'api/daily/owner$'=>'Api/Daily/owner',
+
+        // 后台路由
+        'admin/login$'=>'Home/Admin/login',
+        'admin/api/login'=>'Home/Admin/ajaxLogin',
+        'admin/index$'=>'Home/Admin/index',
+        'admin/api/user/list$'=>'Home/Admin/ajaxUserList',
+        'admin/api/user/delete$'=>'Home/Admin/ajaxUserDelete',
+        'admin/api/user/setstatus$'=>'Home/Admin/ajaxUserSetStatus',
     ),
 
 );

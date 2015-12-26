@@ -233,6 +233,9 @@ $(function(){
                 alert('密码不正确！');
                 $("#user_login_form_password").focus();
             break;
+            case -105:
+                alert('此用户尚未激活，请联系管理员激活账户！');
+            break;
             case 1:
                 alert('登录成功！');
                 location.href = "{:U('/')}";

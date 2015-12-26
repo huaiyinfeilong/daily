@@ -7,6 +7,7 @@ CREATE TABLE `daily_user` (
     `mobile` varchar(11) NOT NULL DEFAULT '' COMMENT '手机号码',
     `qq` varchar(12) NOT NULL DEFAULT '' COMMENT 'QQ号码',
     `weixin` varchar(50) NOT NULL DEFAULT '' COMMENT '微信号码',
+    `status` tinyint(1) NOT NULL default 0 COMMENT '用户状态',
     `register_time` int(11) unsigned NOT NULL DEFAULT 0 COMMENT '注册时间',
     `last_time` int(11) unsigned NOT NULL DEFAULT 0 COMMENT '最后登录时间',
     `register_ip` varchar(15) NOT NULL DEFAULT '' COMMENT '用户注册时的IP地址',
