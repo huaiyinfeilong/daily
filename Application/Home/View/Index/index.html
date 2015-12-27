@@ -24,6 +24,7 @@
             <!-- 导航菜单开始 -->
             <ul class="nav navbar-nav">
                 <li><a href="{:U('/')}">首页</a></li>
+                <li><a onclick="addFavorite('http://rb.xysoftlab.com', '{:C('WEBSITE_TITLE')}')" href="javascript:;">添加到收藏</a></li>
                     <li><a id="link_user_photo" href="javascript:;">{$user.username}</a></li>
                     <li><a id="link_user_logout" href="javascript:;">退出登录</a></li>
             <li><a id="link_write_daily" href="javascript:;">撰写日报</a></li>
@@ -115,6 +116,27 @@
 <script type="text/javascript">
 // 全局变量定义
 var g_uid = 0;    // 当前用户列表中选定的用户的ID
+
+// 添加到收藏
+function addFavorite(url, title)
+{
+    try
+    {
+        url = encodeURI(url);
+        window.external.addFavorite(url, title);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(title, url, '');
+        }
+        catch (e)
+        {
+            alert('抱歉，您的浏览器不支持使用此方法添加收藏，请使用Ctrl+D手动收藏！');
+        }
+    }
+}
 
 // 清空日报撰写表单
 function clearWriteDailyForm()
