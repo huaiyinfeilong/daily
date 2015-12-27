@@ -18,8 +18,6 @@ class UserController extends AuthController
             $uid = $user->add();
             if ($uid > 0)
             {
-        $userSession = array('uid'=>$rs['id'], 'username'=>$rs['username'], 'client_ip'=>get_client_ip());
-                session('user', $userSession);
                 $this->ajaxReturn(1);
             }
             $this->ajaxReturn(0);
