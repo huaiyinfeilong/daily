@@ -5,64 +5,80 @@
 <meta charset="utf-8">
 <title>{:C('WEBSITE_TITLE')}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<load href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-<load href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
-<load href="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js" />
-<load href="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js" />
+<link rel="stylesheet" type="text/css" href="/xytk/Public/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/xytk/Public/css/bootstrap.min-theme.css">
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 <body>
-<div class="wrap">
-    <div class="header">
-        <div class="logo"><a href="{:U('/')}"><img alt="{:C('WEBSITE_TITLE')} Logo" src="__PUBLIC__/img/logo.png" /></a></div>
-        <!-- 导航菜单开始 -->
-        <div class="nav-menu">
-            <ul>
+<header>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a href="{:U('/')}"><img alt="{:C('WEBSITE_TITLE')} Logo" src="__PUBLIC__/img/logo.png" /></a>
+            </div>
+            <!-- 导航菜单开始 -->
+            <ul class="nav navbar-nav">
                 <li><a href="{:U('/')}">首页</a></li>
                     <li><a id="link_user_photo" href="javascript:;">{$user.username}</a></li>
                     <li><a id="link_user_logout" href="javascript:;">退出登录</a></li>
             <li><a id="link_write_daily" href="javascript:;">撰写日报</a></li>
             </ul>
-        </div>
         <!-- 导航菜单结束 -->
-        <div class="user-selector">
-            <select id="user_selector">
-            </select>
+        </nav>
+        <!-- 用户下拉框开始 -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <select id="user_selector">
+                </select>
+            </div>
         </div>
+        <!-- 用户下拉框结束 -->
     </div>
-    <div class="main">
-        <div class="dynamic-view">
-            <!-- 日报撰写表单开始 -->
-            <div id="write_daily_form_view" style="display:none;">
-                <div><h1>撰写日报</h1></div>
-                <div><label for="write_daily_form_title">日报标题：</label><input type="text" id="write_daily_form_title" value="" size="100" maxsize="100" /></div>
-                <div><label for="write_daily_form_content">日报正文：</label></div>
-                <div><textarea id="write_daily_form_content" rows="50" cols="50"></textarea></div>
-                <div><button id="btn_write_daily_form_write" type="button">提交</button></div>
-                <div><button id="btn_write_daily_form_close" type="button">关闭</button></div>
+</header>
+<section>
+    <div class="container">
+        <!-- 日报撰写表单开始 -->
+        <div id="write_daily_form_view" class="row" style="display:none;">
+            <div class="col-md-6 col-md-offset-6">
+                <h1 class="page-header">撰写日报</h1>
+                <div class="input-group"><label for="write_daily_form_title">日报标题：</label><input type="text" class="form-control" id="write_daily_form_title" value="" size="100" maxsize="100" /></div>
+                <div class="input-group"><div class="input-group-addon"><label for="write_daily_form_content">日报正文：</label></div>
+                <div><textarea class="form-control" id="write_daily_form_content" rows="50" cols="50"></textarea></div></div>
+                <div><button id="btn_write_daily_form_write" type="button" class="btn btn-default">提交</button></div>
+                <div><button id="btn_write_daily_form_close" type="button" class="btn btn-close">关闭</button></div>
             </div>
-            <!-- 日报撰写表单结束 -->
-            <!-- 日报编辑表单开始 -->
-            <div id="edit_daily_form_view" style="display:none;">
-                <div><h1>编辑日报</h1></div>
-                <div><label for="edit_daily_form_title">日报标题：</label><input type="text" id="edit_daily_form_title" value="" size="100" maxsize="100" /></div>
-                <div><label for="edit_daily_form_content">日报正文：</label></div>
-                <div><textarea id="edit_daily_form_content" rows="50" cols="50"></textarea></div>
-                <div><input type="hidden" id="edit_daily_form_id" value="" /></div>
-                <div><button id="btn_edit_daily_form_edit" type="button">提交</button></div>
-                <div><button id="btn_edit_daily_form_close" type="button">关闭</button></div>
-            </div>
-            <!-- 日报编辑表单结束 -->
         </div>
+        <!-- 日报撰写表单结束 -->
+        <!-- 日报编辑表单开始 -->
+        <div id="edit_daily_form_view" class="row" style="display:none;">
+            <div class="col-md-6 col-md-offset-3">
+                <h1 class="page-header">编辑日报</h1>
+                <div class="input-group"><label for="edit_daily_form_title">日报标题：</label><input type="text" class="form-control" id="edit_daily_form_title" value="" size="100" maxsize="100" /></div>
+                <div class="input-group"><div class="input-group-addon"><label for="edit_daily_form_content">日报正文：</label></div>
+                <div><textarea id="edit_daily_form_content" class="form-control" rows="50" cols="50"></textarea></div></div>
+                <div><input type="hidden" id="edit_daily_form_id" value="" /></div>
+                <div><button id="btn_edit_daily_form_edit" type="button" class="btn btn-default">提交</button></div>
+                <div><button id="btn_edit_daily_form_close" type="button" class="btn btn-close">关闭</button></div>
+            </div>
+        </div>
+        <!-- 日报编辑表单结束 -->
         <!-- 日报列表开始 -->
-        <div class="daily-list">
-            <table id="daily_table">
-                <caption>日报列表</caption>
-                <tr>
-                    <th class="th-daily-title">标题</th><th class="th-daily-author">作者</th><th class="th-daily-update-time">时间</th><th class="th-daily-edit"></th><th class="th-daily-delete"></th>
-                </tr>
-                <tbody id="daily_table_tbody">
-                </tbody>
-            </table>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <table id="daily_table">
+                    <caption>日报列表</caption>
+                    <tr>
+                        <th class="th-daily-title">标题</th><th class="th-daily-author">作者</th><th class="th-daily-update-time">时间</th><th class="th-daily-edit"></th><th class="th-daily-delete"></th>
+                    </tr>
+                    <tbody id="daily_table_tbody">
+                    </tbody>
+                </table>
+            </div>
         </div>
         <!-- 日报列表结束 -->
         <!-- 分页开始 -->
@@ -74,19 +90,27 @@
         </div>
         <!-- 分页结束 -->
         <!-- 日报内容开始 -->
-        <div tabindex="0" class="daily-detail-view" style="display:none;">
-            <div class="daily-detail-title"></div>
-            <div><span class="daily-detail-author"></span><span class="daily-detail-update-time"></span></div>
-            <div class="daily-detail-content"></div>
-            <div><input type="hidden" id="daily_detail_view_id" value="" /></div>
-            <div class="daily-detail-close"><button id="btn_daily_detail_close" type="button">关闭</button></div>
+        <div tabindex="0" id="daily_detail_view" class="row" style="display:none;">
+            <div class="col-md-6 col-md-offset-3">
+                <h1 id="daily_detail_title" class="page-header"></h1>
+                <div><span id="daily_detail_author"></span><span id="daily_detail_update_time"></span></div>
+                <div id="daily_detail_content"></div>
+                <div><input type="hidden" id="daily_detail_view_id" value="" /></div>
+                <div><button id="btn_daily_detail_close" type="button" class="btn btn-close">关闭</button></div>
+            </div>
         </div>
         <!-- 日报内容结束 -->
     </div>
-    <div class="footer">
-        <div class="copyright">版权所有 &copy; {:date('Y')} <a href="http://www.siaa.org.cn" target="_blank">信息无障碍研究会</a></div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <p>版权所有 &copy; {:date('Y')} <a href="http://www.siaa.org.cn" target="_blank">信息无障碍研究会</a></p>
+            </div>
+        </div>
     </div>
-</div>
+</footer>
 
 <script type="text/javascript">
 // 全局变量定义
@@ -130,17 +154,17 @@ clearWriteDailyForm();
 // 显示日报内容详情视图
 function showDailyDetailView()
 {
-    $(".daily-detail-view").show();
-        $(".daily-detail-view").focus();
+    $("#daily_detail_view").show();
+        $("#daily_detail_view").focus();
 }
 
 // 清空日报内容视图中的数据
 function clearDailyDetailView()
 {
-    $(".daily-detail-title").html('');
-    $(".daily-detail-author").html('');
-    $(".daily-detail-update-time").html('');
-    $(".daily-detail-content").html('');
+    $("#daily_detail_title").html('');
+    $("#daily_detail_author").html('');
+    $("#daily_detail_update_time").html('');
+    $("#daily_detail_content").html('');
     $("#daily_detail_view_id").val('');
 }
 
@@ -148,7 +172,7 @@ function clearDailyDetailView()
 function closeDailyDetailView()
 {
     clearDailyDetailView();
-    $(".daily-detail-view").hide();
+    $("#daily_detail_view").hide();
 }
 
 // 点击日报标题链接
@@ -167,10 +191,10 @@ function detailDaily(id)
             alert('日报没有找到！');
         break;
         default:
-            $(".daily-detail-title").html(data.title);
-            $(".daily-detail-author").html(data.author);
-            $(".daily-detail-update-time").html(data.update_time);
-            $(".daily-detail-content").html(data.content.replace(/\n/g, '<br />'));
+            $("#daily_detail_title").html(data.title);
+            $("#daily_detail_author").html(data.author);
+            $("#daily_detail_update_time").html(data.update_time);
+            $("#daily_detail_content").html(data.content.replace(/\n/g, '<br />'));
             $("#daily_detail_view_id").val(id.toString());
             showDailyDetailView();
         break;
