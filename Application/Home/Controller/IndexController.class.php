@@ -33,6 +33,8 @@ class IndexController extends Controller
         $rs = $db->find($uid);
         if (!$rs)
             return false;
+        if ($rs['status'] != 1)
+            return false;
         if ($cookie['key'] != md5(get_client_ip()))
             return false;
 

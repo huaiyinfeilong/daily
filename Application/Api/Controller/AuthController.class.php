@@ -18,6 +18,8 @@ class AuthController extends Controller
         }
         else
         {
+            if (MODULE_NAME == 'Home' && CONTROLLER_NAME == 'User' && ACTION_NAME == 'logout')
+                return true;
             $userSession = session('user');
             if (!$this->getUserStatus($userSession['uid']))
             {
