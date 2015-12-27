@@ -43,6 +43,9 @@
 
 <script type="text/javascript">
 $(function(){
+    // 自动聚焦登录表单中的用户名编辑框
+    $("#username").focus();
+
     // 在登录表单的输入控件上回车
     $("#username, #password").keypress(function(e){
         if (e.keyCode == 13)
