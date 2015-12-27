@@ -233,13 +233,13 @@ function turnPage(page)
 // 更新日报列表
 function updateDailyTable(page)
 {
-    $.post('{:U('/api/daily/list')}', {uid: g_uid, page: page, size: 9}, function(data){
+    $.post('{:U('/api/daily/list')}', {uid: g_uid, page: page, size: 8}, function(data){
         $("#daily_table_tbody").html('');
             if (data)
         {
         var dailyList = data.data;
         for (var i = 0; i < dailyList.length; i++)
-                $("#daily_table_tbody").append('<tr><td><a class="daily-item-title" id="daily_item' + dailyList[i].id + '_detail" onclick="detailDaily(' + dailyList[i].id + ')" href="javascript:;">' + dailyList[i].title + '</a></td><td>' + dailyList[i].author + '</td><td>' + dailyList[i].update_time + '</td><td><a class="daily-item-edit" id="daily_item' + dailyList[i].id + '_edit" onclick="editDaily(' + dailyList[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" id="daily_item' + dailyList[i].id + '_delete" onclick="deleteDaily(' + dailyList[i].id + ')" href="javascript:;">删除</a></td></tr>');
+                $("#daily_table_tbody").append('<tr><td><h2><a class="daily-item-title" id="daily_item' + dailyList[i].id + '_detail" onclick="detailDaily(' + dailyList[i].id + ')" href="javascript:;">' + dailyList[i].title + '</a></h2></td><td>' + dailyList[i].author + '</td><td>' + dailyList[i].update_time + '</td><td><a class="daily-item-edit" id="daily_item' + dailyList[i].id + '_edit" onclick="editDaily(' + dailyList[i].id + ')" href="javascript:;">编辑</a></td><td><a class="daily-item-delete" id="daily_item' + dailyList[i].id + '_delete" onclick="deleteDaily(' + dailyList[i].id + ')" href="javascript:;">删除</a></td></tr>');
             $("#pagination").html('');
             if (data.curpage > 1)
                 $("#pagination").html('<li><a href="javascript:;" onclick="turnPage(' + (data.curpage - 1) + ')" title="上一页">&lt;&lt;</a></li>');
